@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CAPY Anti-Bullying</title>
+
+    <!-- CSS -->
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+    <div id="loginScreen">
+        <div class="login-content">
+            <h1>C A P Y</h1>
+            <p>Devam etmek için lütfen adını yaz:</p>
+            <input type="text" id="userName" placeholder="Adın nedir?" autofocus>
+            <br>
+            <button id="startBtn">Başla</button>
+        </div>
+    </div>
+
+    <div id="mainApp" style="display: none; width: 100%; text-align: center;">
+        <header>
+            <h1>C A P Y</h1>
+        </header>
+
+        <main>
+            <!-- ❌ GLB kaldırıldı, JPG kullanılıyor -->
+            <img 
+                src="{{ url_for('static', filename='Capy.jpg') }}" 
+                alt="Capy" 
+                id="capyImageMain" 
+                style="width: 300px; margin: 15px auto; display: block;">
+
+            <div class="instruction-box" style="margin: 15px auto; max-width: 600px; line-height: 1.6;">
+                <p>Capy'ye bir zorbalık türü söyle ve Capy'nin zorbalık türüne göre tüy rengi değişir;</p>
+                <p>
+                    Eğer <span style="color:#cc0000;font-weight:bold;">sözel zorbalıksa kırmızı</span>,
+                    <span style="color:#d4af37;font-weight:bold;">fiziksel zorbalıksa sarı</span>,
+                    <span style="color:#3366ff;font-weight:bold;">siber zorbalıksa mavi</span> olur.
+                    Capy sana zorbalıkla nasıl başa çıkacağın hakkında tavsiye verir.
+                </p>
+            </div>
+
+            <div class="input-panel">
+                <input type="text" id="userInput" placeholder="Ne oldu? Anlatabilirsin...">
+                <button id="sendBtn">Gönder</button>
+            </div>
+
+            <div id="adviceArea" class="advice-box"></div>
+        </main>
+
+        <footer>
+            <div class="instruction-text">
+                Capy seni her zaman korur. <br>
+                <span style="color:#cc0000;font-weight:bold;">Sözel</span> |
+                <span style="color:#d4af37;font-weight:bold;">Fiziksel</span> |
+                <span style="color:#3366ff;font-weight:bold;">Dijital</span>
+            </div>
+
+            <img 
+                src="{{ url_for('static', filename='Capy.jpg') }}"
+                alt="Capy"
+                class="footer-img"
+                id="capyImage">
+        </footer>
+    </div>
+
+    <!-- JS -->
+    <script type="module" src="{{ url_for('static', filename='app.js') }}"></script>
+
+</body>
+</html>
